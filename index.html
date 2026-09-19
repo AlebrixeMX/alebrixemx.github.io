@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alebrixe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           ESTILOS GENERALES
+        ========================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Caveat Brush", cursive;
+            font-size: 100px;
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 0.9;
+        }
+
+        h2 {
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+
+        p {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           INICIO
+        ========================= */
+
+        #inicio {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        #inicio img {
+            width: 400px;
+            max-width: 70vw;
+            margin-bottom: 0;
+
+            animation: aparecer 1.5s ease-out;
+
+            transition: transform 0.4s ease;
+        }
+
+        #inicio img:hover {
+            transform: scale(1.04) rotate(-1deg);
+        }
+
+        #inicio h1 {
+            animation: aparecer 1.5s ease-out 0.2s both;
+        }
+
+        #inicio p {
+            max-width: 600px;
+            margin-top: 15px;
+            line-height: 1.6;
+
+            animation: aparecer 1.5s ease-out 0.4s both;
+        }
+
+        #inicio .boton {
+            animation: aparecer 1.5s ease-out 0.6s both;
+        }
+
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           BOTONES
+        ========================= */
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 30px;
+            padding: 15px 35px;
+
+            border: 1px solid white;
+
+            color: white;
+            text-decoration: none;
+
+            letter-spacing: 3px;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+        /* =========================
+           MÚSICA
+        ========================= */
+
+        #musica {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .canciones {
+            width: 100%;
+            max-width: 700px;
+            margin-top: 45px;
+        }
+
+        .cancion {
+            margin-bottom: 35px;
+        }
+
+        .cancion h3 {
+            font-size: 18px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .spotify {
+            width: 100%;
+            height: 152px;
+
+            border: none;
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           LINKS DE MÚSICA
+        ========================= */
+
+        .music-links {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .music-link {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border: 1px solid #333;
+
+            color: white;
+            text-decoration: none;
+
+            letter-spacing: 2px;
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .music-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+        /* =========================
+           PRÓXIMO LANZAMIENTO
+        ========================= */
+
+        .proximo-lanzamiento {
+            margin-top: 70px;
+
+            padding: 40px 20px;
+
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+
+            max-width: 700px;
+        }
+
+        .proximo-lanzamiento .fecha {
+            font-family: "Caveat Brush", cursive;
+
+            font-size: 40px;
+            letter-spacing: 4px;
+
+            color: white;
+        }
+
+        .proximo-lanzamiento .letra {
+            max-width: 600px;
+
+            margin: 25px auto 0;
+
+            line-height: 1.8;
+
+            color: #aaa;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           BANDA
+        ========================= */
+
+        #banda {
+            min-height: auto;
+
+            padding-top: 70px;
+            padding-bottom: 100px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foto-banda {
+            width: 100%;
+            max-width: 1100px;
+
+            height: auto;
+
+            display: block;
+        }
+
+        .banda-info {
+            max-width: 750px;
+
+            margin-top: 45px;
+        }
+
+        .banda-info h2 {
+            margin-bottom: 25px;
+        }
+
+        .banda-info p {
+            line-height: 1.8;
+        }
+
+        .integrantes {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+
+            gap: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .integrante {
+            min-width: 130px;
+        }
+
+        .integrante strong {
+            display: block;
+
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+
+        .integrante span {
+            display: block;
+
+            margin-top: 8px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+        .foto-banda-secundaria {
+            width: 100%;
+            max-width: 1100px;
+
+            height: auto;
+
+            display: block;
+
+            margin-top: 70px;
+        }
+
+
+        /* =========================
+           MERCH
+        ========================= */
+
+        #merch {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .merch-mensaje {
+            max-width: 600px;
+
+            margin-top: 20px;
+
+            line-height: 1.8;
+        }
+
+        .merch-proximo {
+            margin-top: 35px;
+
+            font-family: "Caveat Brush", cursive;
+
+            font-size: 40px;
+
+            letter-spacing: 4px;
+
+            color: white;
+        }
+
+
+        /* =========================
+           FECHAS
+        ========================= */
+
+        #fechas {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .por-anunciar {
+            margin-top: 30px;
+
+            font-family: "Caveat Brush", cursive;
+
+            font-size: 36px;
+
+            letter-spacing: 4px;
+
+            color: white;
+        }
+
+
+        /* =========================
+           VIDEOS
+        ========================= */
+
+        #videos {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-contenedor {
+            width: 100%;
+            max-width: 900px;
+
+            margin-top: 35px;
+
+            aspect-ratio: 16 / 9;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            border: none;
+        }
+
+        .videos-contenedor {
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .video-boton {
+            display: inline-block;
+
+            padding: 15px 35px;
+
+            border: 1px solid #333;
+
+            color: white;
+
+            text-decoration: none;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+        }
+
+        .video-boton:hover {
+            background-color: white;
+
+            color: black;
+        }
+
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        #contacto {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contacto-info {
+            margin-top: 25px;
+        }
+
+        .contacto-info p {
+            margin: 15px 0;
+        }
+
+        .contacto-info a {
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .contacto-info a:hover {
+            color: #aaa;
+        }
+
+        .redes {
+            margin-top: 30px;
+        }
+
+        .redes a {
+            color: white;
+
+            text-decoration: none;
+
+            margin: 10px;
+
+            transition: 0.3s;
+        }
+
+        .redes a:hover {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           MÓVIL
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 0;
+
+                overflow-x: auto;
+
+                white-space: nowrap;
+            }
+
+            nav a {
+                margin: 0 6px;
+
+                font-size: 11px;
+
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                font-size: 70px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            #inicio img {
+                width: 320px;
+            }
+
+            .spotify {
+                height: 152px;
+            }
+
+            .proximo-lanzamiento .letra {
+                font-size: 16px;
+            }
+
+            .foto-banda {
+                width: 100%;
+            }
+
+            .foto-banda-secundaria {
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            .banda-info p {
+                font-size: 16px;
+            }
+
+            .integrantes {
+                gap: 25px;
+            }
+
+            .merch-proximo {
+                font-size: 32px;
+            }
+
+            .video-contenedor {
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENÚ
+    ========================= -->
+
+    <nav>
+
+        <a href="#inicio">INICIO</a>
+        <a href="#musica">MÚSICA</a>
+        <a href="#banda">BANDA</a>
+        <a href="#merch">MERCH</a>
+        <a href="#fechas">FECHAS</a>
+        <a href="#videos">VIDEOS</a>
+        <a href="#contacto">CONTACTO</a>
+
+    </nav>
+
+
+    <!-- =========================
+         INICIO
+    ========================= -->
+
+    <section id="inicio">
+
+        <img
+            src="ajolote.png"
+            alt="Ajolote de Alebrixe">
+
+        <h1>ALEBRIXE</h1>
+
+        <p>
+            Mírame a los ojos, no voy a llorar.<br>
+            Olvidas fácil y te pones a cantar.
+        </p>
+
+        <a
+            href="#musica"
+            class="boton">
+
+            ESCUCHAR
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================= -->
+
+    <section id="musica">
+
+        <h2>MÚSICA</h2>
+
+
+        <div class="canciones">
+
+
+            <!-- HORIZONTE -->
+
+            <div class="cancion">
+
+                <h3>HORIZONTE</h3>
+
+                <iframe
+                    class="spotify"
+                    src="https://open.spotify.com/embed/track/7mV0MLop6a3sYAd4Fwdxl9"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <!-- GALAXIAS -->
+
+            <div class="cancion">
+
+                <h3>GALAXIAS</h3>
+
+                <iframe
+                    class="spotify"
+                    src="https://open.spotify.com/embed/track/03dRcdy75lwd2A98diFdLl"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <!-- LA GATA BAJO LA LLUVIA -->
+
+            <div class="cancion">
+
+                <h3>LA GATA BAJO LA LLUVIA</h3>
+
+                <iframe
+                    class="spotify"
+                    src="https://open.spotify.com/embed/track/0eNdsCZpIMIeqDKoWci343"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <!-- AMIGOS DE CORAZÓN -->
+
+            <div class="cancion">
+
+                <h3>AMIGOS DE CORAZÓN</h3>
+
+                <iframe
+                    class="spotify"
+                    src="https://open.spotify.com/embed/track/5o7gGQyD11VfLyTAoVM1V6"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <!-- EL NAHUAL Y LA ESPAÑOLA -->
+
+            <div class="cancion">
+
+                <h3>EL NAHUAL Y LA ESPAÑOLA</h3>
+
+                <p>
+                    Disponible próximamente.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LINKS DE MÚSICA -->
+
+        <div class="music-links">
+
+            <a
+                class="music-link"
+                href="https://open.spotify.com/intl-es/artist/5nes3CfBC1AVz6sJddgxDU?si=1Q9_kFLOQTe5orOgxsXYjQ"
+                target="_blank">
+
+                SPOTIFY
+
+            </a>
+
+
+            <a
+                class="music-link"
+                href="https://music.youtube.com/channel/UCE4DkiHA02UlQpDvyuskVXw?si=q6RdnL4yp6-4C5Kp"
+                target="_blank">
+
+                YOUTUBE MUSIC
+
+            </a>
+
+        </div>
+
+
+        <!-- PRÓXIMO LANZAMIENTO -->
+
+        <div class="proximo-lanzamiento">
+
+            <div class="fecha">
+
+                02 · 11 · 26
+
+            </div>
+
+            <div class="letra">
+
+                Era ingenuo, joven y tonto y nunca pude valorar<br>
+                Lo bonito que a mi vida le pudiste tú entregar<br>
+                Solo espero y me perdones, por haber sido tan brusco<br>
+                Me faltaron más abrazos, yo te los voy a guardar
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         BANDA
+    ========================= -->
+
+    <section id="banda">
+
+        <img
+            src="banda1.png"
+            alt="Alebrixe"
+            class="foto-banda">
+
+
+        <div class="banda-info">
+
+            <h2>LA BANDA</h2>
+
+            <p>
+                Alebrixe nace en San Luis Potosí en 2024,
+                explorando los límites entre el math rock,
+                el midwest emo y el pop punk.
+            </p>
+
+
+            <div class="integrantes">
+
+
+                <div class="integrante">
+
+                    <strong>JOSUÉ</strong>
+
+                    <span>
+                        Bajo
+                    </span>
+
+                </div>
+
+
+                <div class="integrante">
+
+                    <strong>SEBASTIÁN</strong>
+
+                    <span>
+                        Guitarra · Voz
+                    </span>
+
+                </div>
+
+
+                <div class="integrante">
+
+                    <strong>IVÁN</strong>
+
+                    <span>
+                        Guitarra
+                    </span>
+
+                </div>
+
+
+                <div class="integrante">
+
+                    <strong>MANUEL</strong>
+
+                    <span>
+                        Batería
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- SEGUNDA FOTO -->
+
+        <img
+            src="banda2.png"
+            alt="Alebrixe"
+            class="foto-banda-secundaria">
+
+    </section>
+
+
+    <!-- =========================
+         MERCH
+    ========================= -->
+
+    <section id="merch">
+
+        <h2>MERCH</h2>
+
+        <div class="merch-mensaje">
+
+            <p>
+                Cosas bonitas para gente bonita.
+            </p>
+
+            <p>
+                Playeras, stickers, parches y demás
+                objetos provenientes del universo de Alebrixe.
+            </p>
+
+        </div>
+
+        <div class="merch-proximo">
+
+            PRÓXIMAMENTE
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FECHAS
+    ========================= -->
+
+    <section id="fechas">
+
+        <h2>FECHAS</h2>
+
+        <div class="por-anunciar">
+
+            POR ANUNCIAR
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VIDEOS
+    ========================= -->
+
+    <section id="videos">
+
+        <h2>VIDEOS</h2>
+
+
+        <div class="video-contenedor">
+
+            <iframe
+                class="video"
+                src="https://www.youtube.com/embed/hPLCTi9u02k"
+                title="Alebrixe"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <div class="videos-contenedor">
+
+
+            <a
+                class="video-boton"
+                href="https://www.instagram.com/alebrixe_band/"
+                target="_blank">
+
+                VER EN INSTAGRAM
+
+            </a>
+
+
+            <a
+                class="video-boton"
+                href="https://www.tiktok.com/@alebrixe_band"
+                target="_blank">
+
+                VER EN TIKTOK
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================= -->
+
+    <section id="contacto">
+
+        <h2>CONTACTO</h2>
+
+        <p>
+            Para fechas, colaboraciones o cualquier cosa.
+        </p>
+
+
+        <div class="contacto-info">
+
+            <p>
+
+                <strong>Correo:</strong><br>
+
+                <a href="mailto:alebrijenahual24@gmail.com">
+
+                    alebrijenahual24@gmail.com
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="redes">
+
+
+            <a
+                href="https://www.instagram.com/alebrixe_band/"
+                target="_blank">
+
+                Instagram
+
+            </a>
+
+
+            <a
+                href="https://www.tiktok.com/@alebrixe_band"
+                target="_blank">
+
+                TikTok
+
+            </a>
+
+
+            <a
+                href="https://open.spotify.com/intl-es/artist/5nes3CfBC1AVz6sJddgxDU?si=1Q9_kFLOQTe5orOgxsXYjQ"
+                target="_blank">
+
+                Spotify
+
+            </a>
+
+
+            <a
+                href="https://music.youtube.com/channel/UCE4DkiHA02UlQpDvyuskVXw?si=q6RdnL4yp6-4C5Kp"
+                target="_blank">
+
+                YouTube
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
